@@ -1,4 +1,5 @@
-import { FETCH_TASKS } from './types';
+import { FETCH_TASKS
+         REDO_TASK } from './types';
 
 
 export function fetchTasks() {
@@ -28,9 +29,9 @@ export function fetchTasks() {
 //     }
 // }
 
-// export function redoTask(chore) {
-//     return {
-//         type: REDO_TASK,
-//         payload: chore
-//     }
-// }
+export function redoTask(chore) {
+    return {
+        type: REDO_TASK,
+        payload: chore
+    }
+}

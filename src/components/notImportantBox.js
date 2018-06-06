@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-class completedBox extends Component {
+class notImportantBox extends Component {
 
     constructor(props) {
         super(props)
@@ -14,7 +14,7 @@ class completedBox extends Component {
         return ( 
             <div key={this.props.tasks.indexOf(chore)} className="slot">
                 <div className="slot_title">{chore.description}</div>
-                <a className="action slot_remove">remove task</a>
+                <a className="action slot_remove">Ditch this Task</a>
             </div>
             )
     }
@@ -41,4 +41,4 @@ function mapStateToProps(state) {
 
 
 
-export default connect(mapStateToProps)(completedBox);
+export default connect(mapStateToProps)(notImportantBox);
