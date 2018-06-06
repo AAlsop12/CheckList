@@ -1,0 +1,73 @@
+@import 'components/completedBox';
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+}
+
+.to_do_header {
+    border: none;
+    border-left: 1px solid grey;
+    border-bottom: 1px solid grey;
+    font-family: Alegreya, serif;
+    font-size: 36px;
+    justify-content: center;
+    padding: 5px;
+    z-index: 1;
+
+}
+
+.to_do_box {
+    flex-grow: 2;
+    width: 62%;
+    max-width: 62%;
+    height: 100vh;
+    padding: 6rem;
+    left: 0;
+
+}
+
+.completed_box_header {
+    border: none;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 20px;
+    font-family: 'Alegreya', serif;
+    line-height: 27px;
+}
+
+
+.completed_box {
+    flex-grow: 1;
+    width: 38%;
+    height: 100vh;
+    background: linear-gradient(118.95deg, rgb(4, 45, 122) 0%, #32CBE8 100%);
+    text-align: center;
+    padding: 12rem 6rem;
+    position: fixed;
+    right: 0;
+    
+}
+
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0 25px;
+    margin-top: 50px;
+    padding: 0;
+    width: 120%;
+
+}
+
+ul li {
+    margin: 10px 0;
+    padding-top: 15px;
+    padding-bottom: 16px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
