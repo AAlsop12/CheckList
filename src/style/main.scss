@@ -83,3 +83,28 @@ ul li {
     padding-left: 25px;
     padding-right: 25px;
 }
+
+.slot_chore {
+    background-color: white;
+    color: darkslateblue;
+    border: 1px solid grey;
+
+}
+
+.slot_goal {
+    opacity: 0.75;
+    background-color: transparent;
+    border: 1px solid grey;
+    border-style: dashed;
+    color: grey;
+
+}
+
+.show-content {
+    display: block;
+
+}
+
+.hide-content {
+    display: none;
+}

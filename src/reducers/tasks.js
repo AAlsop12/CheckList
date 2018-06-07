@@ -1,4 +1,4 @@
-import { FETCH_TASKS  } from '../actions/types';
+import { FETCH_TASKS, REDO_TASK  } from '../actions/types';
 
 export default function(state = [], action) {
     switch(action.type) {
@@ -16,15 +16,15 @@ export default function(state = [], action) {
         //         })
         // ]
 
-        // case REDO_TASK:
-        //     return [ 
-        //         ...state.map((chore, index) => {
-        //             if(chore == action.payload) {
-        //                 chore.finished = false
-        //             }
-        //             return chore
-        //         })
-        //     ]
+        case REDO_TASK:
+                return [ 
+                    ...state.map((chore, index) => {
+                        if(chore == action.payload) {
+                            chore.finished = false
+                        }
+                        return chore
+                    })
+                 ]
 
         default: return state
     }

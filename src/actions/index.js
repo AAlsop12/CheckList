@@ -1,4 +1,4 @@
-import { FETCH_TASKS
+import { FETCH_TASKS,
          REDO_TASK } from './types';
 
 
@@ -8,17 +8,24 @@ export function fetchTasks() {
         payload: [
             {
                 description: 'Do some coding homework',
-                finished: false
+                finished: true
             },
 
             {
                 description: 'Make dinner',
-                finished: false
+                finished: true
             }
 
 
         ]
             
+    }
+}
+
+export function redoTask(chore) {
+    return {
+        type: REDO_TASK,
+        payload: chore
     }
 }
 
@@ -29,9 +36,3 @@ export function fetchTasks() {
 //     }
 // }
 
-export function redoTask(chore) {
-    return {
-        type: REDO_TASK,
-        payload: chore
-    }
-}
