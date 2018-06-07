@@ -1,4 +1,4 @@
-import { FETCH_TASKS, REDO_TASK, FINISH_TASK } from '../actions/types';
+import { FETCH_TASKS, REDO_TASK, FINISH_TASK, FORGET_TASK } from '../actions/types';
 
 export default function(state = [], action) {
     switch(action.type) {
@@ -11,7 +11,8 @@ export default function(state = [], action) {
                 return [ 
                     ...state.map((chore, index) => {
                         if(chore == action.payload) {
-                            chore.finished = false
+                            chore.finished = false,
+                            chore.fluff = false
                         }
                         return chore
                     })
@@ -26,6 +27,16 @@ export default function(state = [], action) {
                     return chore
                 })
         ]
+
+        case FORGET_TASK:
+                return [ 
+                    ...state.map((chore, index) => {
+                        if(chore == action.payload) {
+                            chore.fluff = true
+                        }
+                        return chore
+                    })
+                 ]
 
 
         default: return state

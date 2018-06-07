@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchTasks, finishTask, redoTask } from '../actions';
+import { fetchTasks, finishTask, redoTask, forgetTask } from '../actions';
 
 class ToDoBox extends Component {
 
@@ -21,9 +21,11 @@ class ToDoBox extends Component {
             <div className="task_info_container">
                 <div className="task_info">{chore.description}</div>
             </div>
-              <a>arrow</a>
-              <a className={`action ${chore.finished ? 'hide-content' : 'show-content'}`} onClick={() => this.props.finishTask(chore)}>add</a>
-              <a className={`action ${chore.finished ? 'show-content' : 'hide-content'}`} onClick={() => this.props.redoTask(chore)}>remove</a>
+              <a className={`action ${chore.finished ? 'hide-finished-content' : 'show-finished-content'}`} onClick={() => this.props.finishTask(chore)}>finished</a>
+              <a className={`action ${chore.finished ? 'show-finished-content' : 'hide-finished-content'}`} onClick={() => this.props.redoTask(chore)}>remove</a>
+
+              <a className={`action ${chore.fluff ? 'hide-fluff-content' : 'show-fluff-content'}`} onClick={() => this.props.forgetTask(chore)}>Maybe forget about it</a>
+              <a className={`action ${chore.fluff ? 'show-fluff-content' : 'hide-fluff-content'}`} onClick={() => this.props.redoTask(chore)}>Maybe we should actually do that one</a>
         </li>
             )
     }
@@ -56,6 +58,9 @@ function mapDispatchToProps(dispatch) {
         },
         redoTask:(chore) => {
             dispatch(redoTask(chore))
+        },
+        forgetTask:(chore) => {
+            dispatch(forgetTask(chore))
         }
 
     }

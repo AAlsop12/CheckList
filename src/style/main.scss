@@ -30,6 +30,11 @@
 
 }
 
+.task_info {
+    font-size: 24px;
+    font-family: Alegreya, serif;
+}
+
 .completed_box_header {
     border: none;
     border-left: 1px solid white;
@@ -55,9 +60,10 @@
 
 .not_important_box {
     flex-grow: 1;
-    width: 25%;
-    background: black;
+    width: 40%;
+    background: darkgrey;
     padding: 1rem;
+    justify-content: center;
 }
 
 .not_important_box_header {
@@ -68,7 +74,7 @@
 
 
 ul {
-    list-style-type: none;
+    list-style-type: disc;
     margin: 0 25px;
     margin-top: 50px;
     padding: 0;
@@ -100,11 +106,19 @@ ul li {
 
 }
 
-.show-content {
+.show-finished-content {
     display: block;
 
 }
 
-.hide-content {
+.hide-finished-content {
+    display: none;
+}
+
+.show-fluff-content {
+    display: block;
+}
+
+.hide-fluff-content {
     display: none;
 }

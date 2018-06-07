@@ -15,7 +15,7 @@ class completedBox extends Component {
         return ( 
             <div key={this.props.tasks.indexOf(chore)} className={`slot ${chore.finished ? 'slot_chore' : 'slot_goal'}`}>
                 <div className="slot_title">{chore.finished ? chore.description : 'Goal to Complete' }</div>
-                <a className={`action slot_remove ${chore.finished ? 'show-content' : 'hide-content'}`} onClick={() => this.props.redoTask(chore)}>remove task</a>
+                <a className={`action slot_remove ${chore.finished ? 'show-finished-content' : 'hide-finished-content'}`} onClick={() => this.props.redoTask(chore)}>Do task again</a>
             </div>
             )
     }
