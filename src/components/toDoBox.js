@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchTasks, finishTask } from '../actions';
+import { fetchTasks, finishTask, redoTask } from '../actions';
 
 class ToDoBox extends Component {
 
