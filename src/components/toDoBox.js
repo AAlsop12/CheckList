@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchTasks } from '../actions';
+import { fetchTasks, finishTask } from '../actions';
 
 class ToDoBox extends Component {
 
@@ -21,7 +21,9 @@ class ToDoBox extends Component {
             <div className="task_info_container">
                 <div className="task_info">{chore.description}</div>
             </div>
-              {/* <a className={`course_add action ${chore.finished ? 'chore_add' : 'chore_remove'}`} onClick={() => this.props.finishTask(chore)}></a> */}
+              <a>arrow</a>
+              <a className={`action ${chore.finished ? 'hide-content' : 'show-content'}`} onClick={() => this.props.finishTask(chore)}>add</a>
+              <a className={`action ${chore.finished ? 'show-content' : 'hide-content'}`} onClick={() => this.props.redoTask(chore)}>remove</a>
         </li>
             )
     }
@@ -49,12 +51,13 @@ function mapDispatchToProps(dispatch) {
         fetchTasks: () => {
         dispatch(fetchTasks())
         },
-        // finishTask:(chore) => {
-        //     dispatch(finishTask(chore))
-        // },
-        // redoTask:(chore) => {
-        //     dispatch(redoTask(chore))
-        // },
+        finishTask:(chore) => {
+            dispatch(finishTask(chore))
+        },
+        redoTask:(chore) => {
+            dispatch(redoTask(chore))
+        }
+
     }
 }
 

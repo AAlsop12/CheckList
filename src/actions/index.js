@@ -1,5 +1,6 @@
 import { FETCH_TASKS,
-         REDO_TASK } from './types';
+         REDO_TASK,
+         FINISH_TASK } from './types';
 
 
 export function fetchTasks() {
@@ -8,12 +9,12 @@ export function fetchTasks() {
         payload: [
             {
                 description: 'Do some coding homework',
-                finished: true
+                finished: false
             },
 
             {
                 description: 'Make dinner',
-                finished: true
+                finished: false
             }
 
 
@@ -29,10 +30,10 @@ export function redoTask(chore) {
     }
 }
 
-// export function finishTask(chore) {
-//     return {
-//         type: FINISH_TASK,
-//         payload: chore
-//     }
-// }
+export function finishTask(chore) {
+    return {
+        type: FINISH_TASK,
+        payload: chore
+    }
+}
 
